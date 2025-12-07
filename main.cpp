@@ -129,7 +129,7 @@ public:
                 std::size_t idx = static_cast<std::size_t>(safeStoi(tokens[paramStart])); deleteElementArray(arr, idx);
             } else if (tokens[0] == "MSET") {
                 if (tokens.size() <= paramStart + 1) { cerr << "ERROR 30: Invalid index/argument" << endl; exit(1); }
-                std::size_t idx = static_cast<std::size_t>(safeStoi(tokens[paramStart + 1])); setKeyArray(arr, tokens[paramStart], idx);
+                std::size_t idx = static_cast<std::size_t>(safeStoi(tokens[paramStart])); setKeyArray(arr, tokens[paramStart + 1], idx);
             } else if (tokens[0] == "MLEN") {
                 cout << getArrayLength(arr) << endl;
             } else { cerr << "ERROR 10: Unknown command" << endl; exit(1); }
@@ -240,6 +240,13 @@ public:
             } else if (tokens[0] == "LGET") {
                 if (tokens.size()<paramStart+1) { cerr<<"ERROR 30: Invalid index/argument"<<endl; exit(1); }
                 int idx=safeStoi(tokens[paramStart]); cout<<getElementDFList(dl, idx)<<endl;
+            } else if (tokens[0] == "LSEARCH") {
+                if (tokens.size()<paramStart+1) { cerr<<"ERROR 30: Invalid index/argument"<<endl; exit(1); }
+                DFNode* found = findNodeByValueDFList(dl, tokens[paramStart]);
+                cout << (found ? "TRUE" : "FALSE") << endl;
+            } else if (tokens[0] == "LDELVAL") {
+                if (tokens.size()<paramStart+1) { cerr<<"ERROR 30: Invalid index/argument"<<endl; exit(1); }
+                deleteNodeByValueDFList(dl, tokens[paramStart]);
             } else if (tokens[0] == "LLEN") {
                 cout << dl->length << endl;
             } else { cerr<<"ERROR 10: Unknown command"<<endl; exit(1); }

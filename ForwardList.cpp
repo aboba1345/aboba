@@ -227,7 +227,7 @@ void ForwardList::deserialize(const std::string& data) {
     iss >> type; // F
     iss >> name;
     int count = 0; iss >> count;
-    // clear
+    // очистка
     FNode* cur = head;
     while (cur) {
         FNode* nxt = cur->next;

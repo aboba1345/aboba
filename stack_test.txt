@@ -1,1 +1,1 @@
-S default 2 elem2 elem1
+S default 0

@@ -31,7 +31,7 @@ struct Queue : public Structure {
     Queue() { list = createFL(); }
     
     /** @brief Деструктор освобождает внутренний список */
-    ~Queue() override { if (list) deleteFL(list); }
+    ~Queue() override { delete list; }
     
     /**
      * @brief Сериализует очередь в формат: "Q name count front ... back"

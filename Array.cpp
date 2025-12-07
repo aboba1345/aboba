@@ -82,11 +82,11 @@ std::string Array::serialize() const {
 void Array::deserialize(const std::string& data) {
     std::istringstream iss(data);
     std::string type;
-    iss >> type; // M
+    iss >> type; // Тип M
     iss >> name;
     int count = 0;
     iss >> count;
-    // clear existing
+    // очистка существующих данных
     if (head) { delete[] head; head = nullptr; }
     createArray(const_cast<Array*>(this), std::max(10, count));
     for (int i = 0; i < count; ++i) {

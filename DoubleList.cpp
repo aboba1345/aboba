@@ -198,7 +198,7 @@ void deleteNodesBeforeIndex(DFList* list, int index) {
     }
     if (index <= 0) return;
     if (index >= static_cast<int>(list->length)) {
-        // delete all
+        // удаление всех узлов
         DFNode* cur = list->head;
         while (cur) {
             DFNode* nxt = cur->next;
@@ -210,7 +210,7 @@ void deleteNodesBeforeIndex(DFList* list, int index) {
         return;
     }
 
-    // delete first 'index' nodes
+    // удаление первых 'index' узлов
     int toDelete = index;
     DFNode* cur = list->head;
     while (toDelete > 0 && cur) {
@@ -231,16 +231,16 @@ void deleteNodesAfterIndex(DFList* list, int index) {
     }
     if (index < 0) return;
     if (index >= static_cast<int>(list->length) - 1) {
-        // nothing after index
+        // нет узлов после индекса
         return;
     }
 
-    // find node at index
+    // поиск узла по индексу
     DFNode* cur = list->head;
     for (int i = 0; i < index && cur; ++i) cur = cur->next;
     if (!cur) return;
 
-    // delete nodes after 'cur'
+    // удаление узлов после 'cur'
     DFNode* toDel = cur->next;
     while (toDel) {
         DFNode* nxt = toDel->next;

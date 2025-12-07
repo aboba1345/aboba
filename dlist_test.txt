@@ -1,1 +1,1 @@
-L default 1 second
+L default 1 20

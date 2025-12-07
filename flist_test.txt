@@ -1,1 +1,1 @@
-F default 3 start a b
+F default 2 10 20

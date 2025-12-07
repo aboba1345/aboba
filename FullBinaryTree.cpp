@@ -252,7 +252,7 @@ void BTree::deserialize(const std::string& data) {
     iss >> name;
     int count = 0;
     iss >> count;
-    // clear existing tree
+    // очистка существующего дерева
     std::function<void(BNode*)> del = [&](BNode* node) {
         if (!node) return;
         del(node->left);

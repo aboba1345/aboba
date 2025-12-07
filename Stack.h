@@ -31,7 +31,7 @@ struct Stack : public Structure {
     Stack() { list = createFL(); }
     
     /** @brief Деструктор освобождает внутренний список */
-    ~Stack() override { if (list) deleteFL(list); }
+    ~Stack() override { delete list; }
     
     /**
      * @brief Сериализует стек в формат: "S name count top ... bottom"

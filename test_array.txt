@@ -1,1 +1,0 @@
-M array 3 value1 value2 value3
