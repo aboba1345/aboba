@@ -1,5 +1,0 @@
-#DoubleList
-12
-14
-16
-PUTIN

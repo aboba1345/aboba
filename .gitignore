@@ -1,0 +1,27 @@
+# Binaries and objects
+*.o
+*.obj
+*.exe
+*.a
+*.so
+*.out
+lab1
+test
+test[0-9]*
+
+# IDE and OS files
+.vscode/
+.idea/
+.DS_Store
+*.swp
+*.ilk
+*.pdb
+
+# Temporary files and logs
+*.log
+*.tmp
+
+# Test files and data
+*_test.txt
+*.data
+run_tests.sh

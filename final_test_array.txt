@@ -1,1 +1,0 @@
-M array 2 val1 val2
